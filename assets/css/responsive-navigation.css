@@ -1,7 +1,7 @@
 /*! responsive-nav.js v1.0.14 by @viljamis */
 
 #mobile-header{
-  background: #D90E0E url('/images/mobile-logo.png') left center no-repeat;
+  background: #D90E0E url('/images/mobile-logo.png') left bottom no-repeat;
   min-height: 50px;
   position: fixed;
   top: 0px;
