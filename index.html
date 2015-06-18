@@ -762,16 +762,16 @@
 
 		                    <div class="row">
 			                    <article class="offset4 span4">
-			                        <input class="cnt-input" size="100" type="text" name="name" id="name" placeholder="Full Name">
+			                        <input class="cnt-input" size="100" type="text" name="name" id="name" placeholder="Full Name" required>
 			                        
-			                        <input class="cnt-input" type="text"  size="30" id="email" name="email" placeholder="Email">
+			                        <input class="cnt-input" type="text"  size="30" id="email" name="email" placeholder="Email" required>
 			                    </article>
 		                    </div>   
 
 		                    <div class="row">
 			                    <article class="offset4 span4 btn-realm-alt">
 			                    	<div>
-			                    		<textarea id="msg" rows="3" cols="40" name="msg" class="cnt-input" placeholder="Message*"></textarea>
+			                    		<textarea id="msg" rows="3" cols="40" name="msg" class="cnt-input" placeholder="Message*" required></textarea>
 			                    	</div>
 			                    </article>
 			                </div>	
@@ -841,6 +841,7 @@
         var email = $("#email").val(); // get email field value
         var name = $("#name").val(); // get name field value
         var msg = $("#msg").val(); // get message field value
+
         $.ajax(
         {
             type: "POST",
