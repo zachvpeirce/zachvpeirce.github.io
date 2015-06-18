@@ -529,7 +529,7 @@ font-family:"RobotoLight";
 
 .service-carousel-bg-img {
 	/*width: 100%;*/
-	background: url("../images/bg/crazyones.gif") center center;
+	background: url("/images/bg/crazyones.gif") center center;
 	background-size: cover;
 }
 
@@ -684,7 +684,7 @@ font-family:"RobotoLight";
 .news-carousel-bg-img {
 	/*width: 100%;*/
 	height: 250px;
-	background: url("../images/bg/uptous.jpg")  center top;
+	background: url("/images/bg/uptous.jpg")  center top;
 	background-size: cover;
 }
 
