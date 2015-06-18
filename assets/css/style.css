@@ -1200,19 +1200,19 @@ font-family:"Open_Sans_L";
 
 .carousel-bg1 {
 	/*height: 500px;*/
-	background: #D90E0E url("../images/carousel/about/1.jpg");
+	background: #D90E0E url("/images/carousel/about/1.jpg");
 	background-size: cover;
 }
 
 .carousel-bg2 {
 	/*height: 500px;*/
-	background: #D90E0E url("../images/carousel/about/2.jpg");
+	background: #D90E0E url("/images/carousel/about/2.jpg");
 	background-size: cover;
 }
 
 .carousel-bg3 {
 	/*height: 500px;*/
-	background: #D90E0E url("../images/carousel/about/3.jpg");
+	background: #D90E0E url("/images/carousel/about/3.jpg");
 	background-size: cover;
 }
 
@@ -1301,10 +1301,10 @@ font-family:"Open_Sans_L";
     width: 50px;
 }
 .carousel-control.left{
-	background: #fff url('../images/carousel/left.png') center center no-repeat;
+	background: #fff url('/images/carousel/left.png') center center no-repeat;
 }
 .carousel-control.right{
-	background: #fff url('../images/carousel/right.png') center center no-repeat;
+	background: #fff url('/images/carousel/right.png') center center no-repeat;
 }
 
 .carousel-control:hover {
@@ -1316,7 +1316,7 @@ font-family:"Open_Sans_L";
 }
 
 .page-bg-img {
-	background: url("../images/common/b_and_w.png") repeat-y center center;
+	background: url("/images/common/b_and_w.png") repeat-y center center;
 }
 
 .page-style {
@@ -1350,7 +1350,7 @@ font-family:"Open_Sans_L";
 .page-style-details {
 	float: left;
 	width: 68.3%;
-	background: url("../images/common/arrow.png") no-repeat center left,  #fff;
+	background: url("/images/common/arrow.png") no-repeat center left,  #fff;
 	padding: 65px;
 	margin-left: 0px !important;
 	}
@@ -1542,7 +1542,7 @@ font-family:"Open_Sans_L";
 		width: 960px;
 	}
 	.page-style-details {
-    background: url("../images/common/arrow.png") no-repeat scroll left center, none repeat scroll 0 0 #FFFFFF;
+    background: url("/images/common/arrow.png") no-repeat scroll left center, none repeat scroll 0 0 #FFFFFF;
     float: left;
     margin-left: 0 !important;
     padding: 71px;
