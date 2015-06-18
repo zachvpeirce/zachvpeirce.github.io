@@ -4,12 +4,12 @@ $(document).ready(function($) {
 	$(".error").hide();
 	$(".success").hide();
 	
-	$('#contactForm input').click(function(e) {
+	$('#contact_form input').click(function(e) {
         $(".error").fadeOut();
     });
 	
 	// on submit...
-	$("#contactForm #submit").click(function() {
+	$("#contact_form #submit").click(function() {
 		$(".error").hide();
 		
 		//required:
