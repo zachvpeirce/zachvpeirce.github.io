@@ -362,7 +362,7 @@ var responsiveNav = (function (window, document) {
 
     _calcHeight: function () {
       var savedHeight = nav.inner.offsetHeight,
-        innerStyles = "#" + this.wrapperEl + ".opened{max-height:" + savedHeight + "px}";
+        innerStyles = "#" + this.wrapperEl + ".opened{max-height:400px}"; //+ savedHeight + "px}";
 
       // Hide from old IE
       if (computed) {
