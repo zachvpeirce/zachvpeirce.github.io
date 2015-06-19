@@ -182,7 +182,7 @@ font-family:"Open_Sans_R";
 }
 
 
-/*Additional Media Queries to position the header*/
+/*Additional Media Queries to position the header
 @media (min-width: 640px) and (max-width: 960px){
   #mobile-header{
     width: 100%;
@@ -196,7 +196,7 @@ font-family:"Open_Sans_R";
   }
 
 }
-
+*/
 @media screen and (min-width: 40em) {
   #nav li {
     width: 16.6%;
