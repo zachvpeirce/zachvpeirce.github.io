@@ -841,14 +841,15 @@
         var email = $("#email").val(); // get email field value
         var name = $("#name").val(); // get name field value
         var msg = $("#msg").val(); // get message field value
-        //var captcha = $("#captcha").val(); //get captcha field
+        //var captcha = $("#captcha").val();
 
         $.ajax({
 			    url: "http://formspree.io/websitecontactform@zachpeirce.com", 
 			    method: "POST",
-			    data: {message: msg,
+			    data: {message: msg, //+ CHR(10) + '5138835', 
 						_replyto: email,
-						_subject: 'Website Contact Form Submission From '+name
+						_subject: 'Website Contact Form Submission From '+name,
+						//_gotcha: captcha,
 						 },
 			    dataType: "json"
 		});
@@ -858,7 +859,7 @@
             $("#name").val(''); // reset field after successful submission
             $("#email").val(''); // reset field after successful submission
             $("#msg").val(''); // reset field after successful submission
-        });
+        })
 
         .fail(function(response) {
             alert('Error sending message.');
