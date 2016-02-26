@@ -763,7 +763,7 @@
 		                    <div class="row">
 			                    <article class="offset4 span4">
 			                        <input class="cnt-input" size="100" type="text" name="name" id="name" placeholder="Full Name">
-			                        
+			                        <!-- <input class="cnt-input" style="display:none;" name="captcha" id="captcha">-->
 			                        <input class="cnt-input" type="text"  size="30" id="email" name="email" placeholder="Email">
 			                    </article>
 		                    </div>   
@@ -801,7 +801,7 @@
 				
 						<article class= "span4">
 							<div class = "copyright">
-								<p>Copyright &copy; 2015 Zach Peirce</p>
+								<p>Copyright &copy; <script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script> Zach Peirce</p>
 							</div>		
 						</article><!-- // End of .span12-->
 					</div><!-- // End of .row -->
@@ -841,36 +841,28 @@
         var email = $("#email").val(); // get email field value
         var name = $("#name").val(); // get name field value
         var msg = $("#msg").val(); // get message field value
+        //var captcha = $("captcha").val();
 
-        $.ajax(
-        {
-            type: "POST",
-            url: "https://mandrillapp.com/api/1.0/messages/send.json",
-            data: {
-                'key': 'iuqdKkO4NOvr-GdBTNDBKg',
-                'message': {
-                    'from_email': email,
-                    'from_name': name,
-                    'headers': {
-                        'Reply-To': email
-                    },
-                    'subject': 'Website Contact Form Submission From '+name,
-                    'text': msg,
-                    'to': [
-                    {
-                        'email': 'Zach@zachpeirce.com',
-                        'name': 'Zach Peirce',
-                        'type': 'to'
-                    }]
-                }
-            }
-        })
+        //if (captcha.length > 0){
+        //	fail()
+        //}
+
+        $.ajax({
+			    url: "http://formspree.io/websitecontactform@zachpeirce.com", 
+			    method: "POST",
+			    data: {message: msg, 
+						_replyto: email
+						_subject: 'Website Contact Form Submission From '+name },
+			    dataType: "json"
+		});
+
         .done(function(response) {
             alert('Your message has been sent. Thank you!'); // show success message
             $("#name").val(''); // reset field after successful submission
             $("#email").val(''); // reset field after successful submission
             $("#msg").val(''); // reset field after successful submission
         })
+
         .fail(function(response) {
             alert('Error sending message.');
         });
