@@ -758,32 +758,20 @@
                 	</div>
 
 		            <div class="row">
-	                    <form id="contact_form">  
-
-		                    <div class="row">
-			                    <article class="offset4 span4">
-			                        <input class="cnt-input" size="100" type="text" name="name" id="name" placeholder="Full Name">
-			                        <!-- <input class="cnt-input" style="display:none;" name="captcha" id="captcha">-->
-			                        <input class="cnt-input" type="text"  size="30" id="email" name="email" placeholder="Email">
-			                    </article>
-		                    </div>   
-
-		                    <div class="row">
-			                    <article class="offset4 span4 btn-realm-alt">
-			                    	<div>
-			                    		<textarea id="msg" rows="3" cols="40" name="msg" class="cnt-input" placeholder="Message*"></textarea>
-			                    	</div>
-			                    </article>
-			                </div>	
-			                <div class="row">
-			                    <article class="offset4 span4 btn-realm-alt">
-			                        <div class="contact-style">
-			                        	<button type="submit" name="submit" id="submit" class="btn add-top-half">Go</button>
-			                        </div>	
-			                    </article>
-		                	</div>
-
-	                    </form>
+	                    <div class="row">
+		                    <article class="offset4 span4">
+								<form id="contact-form" action="http://formspree.io/zach@zachpeirce.com" method="post">
+									<input type="text" name="Name" placeholder="Name" class="cnt-input" required>
+									<input type="email" name="Email" placeholder="Email" class="cnt-input"required>
+									<textarea name="Message" cols="30" rows="6" placeholder="Message" required></textarea>
+									<!-- CONFIG -->
+									<input style='display:none' type="text" name="_gotcha">
+									<input type="hidden" name="_subject" value="Subject">
+									<!-- /CONFIG -->
+									<input class="submit" type="submit" value="Send">
+								</form>
+		                    </article>
+	                    </div>
 		            </div>
 				</section><!-- // End of .container -->		
 			</div><!-- // End of .row-fluid -->
@@ -845,8 +833,9 @@
 
 
         $.ajax({
-    		url: "//formspree.io/zach@zachpeirce.com", 
+    		url: "http://formspree.io/zach@zachpeirce.com", 
     		method: "POST",
+    		header: {accept:"application/json"}
     		data: {message: "hello!"},
     		dataType: "json"
 		});
