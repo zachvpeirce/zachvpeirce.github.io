@@ -845,13 +845,13 @@
 		$.ajax({
 		  url: 'http://formspree.io/zach@zachpeirce.com',
 		  method: 'POST',
-		  data: {message: "hello!"}
+		  data: {message: "hello!"},
 		  dataType: 'json',
 		  beforeSend: function() { /* sending message... */ },
 		  success: function(data) { /* success message... */ },
 		  error: function(err) { /* error message... */ }
 		});
-		
+
         .done(function(response) {
             alert('Your message has been sent. Thank you!'); // show success message
             $("#name").val(''); // reset field after successful submission
