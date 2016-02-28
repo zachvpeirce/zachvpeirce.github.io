@@ -842,16 +842,21 @@
         var name = $("#name").val(); // get name field value
         var msg = $("#msg").val(); // get message field value
 
-		$.ajax({
-		  url: 'http://formspree.io/zach@zachpeirce.com',
-		  method: 'POST',
-		  data: {message: "hello!"},
-		  dataType: 'json',
-		  beforeSend: function() { /* sending message... */ },
-		  success: function(data) { /* success message... */ },
-		  error: function(err) { /* error message... */ }
-		});
-
+        $.ajax(
+        {
+            type: "POST",
+            url: "https://api.mailgun.net/v3/mg.zachpeirce.com/messages",
+            dataType: 'json',
+    		username:'api',
+    		password: 'key-242e03570dc5c79518e0ef0628669fbe',
+            data: {
+               to: 'zach@zachpeirce.com',
+               from: email,
+               text: msg,
+               subject: 'Contact Form Submission from '+name,
+                }
+            }
+        })
         .done(function(response) {
             alert('Your message has been sent. Thank you!'); // show success message
             $("#name").val(''); // reset field after successful submission
