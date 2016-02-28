@@ -758,20 +758,32 @@
                 	</div>
 
 		            <div class="row">
-	                    <div class="row">
-		                    <article class="offset4 span4">
-								<form id="contact-form" action="http://formspree.io/zach@zachpeirce.com" method="post">
-									<input type="text" name="Name" placeholder="Name" class="cnt-input" required>
-									<input type="email" name="Email" placeholder="Email" class="cnt-input"required>
-									<textarea name="Message" cols="30" rows="6" placeholder="Message" required></textarea>
-									<!-- CONFIG -->
-									<input style='display:none' type="text" name="_gotcha">
-									<input type="hidden" name="_subject" value="Subject">
-									<!-- /CONFIG -->
-									<input class="submit" type="submit" value="Send">
-								</form>
-		                    </article>
-	                    </div>
+	                    <form id="contact_form">  
+
+		                    <div class="row">
+			                    <article class="offset4 span4">
+			                        <input class="cnt-input" size="100" type="text" name="name" id="name" placeholder="Full Name">
+			                        
+			                        <input class="cnt-input" type="text"  size="30" id="email" name="email" placeholder="Email">
+			                    </article>
+		                    </div>   
+
+		                    <div class="row">
+			                    <article class="offset4 span4 btn-realm-alt">
+			                    	<div>
+			                    		<textarea id="msg" rows="3" cols="40" name="msg" class="cnt-input" placeholder="Message*"></textarea>
+			                    	</div>
+			                    </article>
+			                </div>	
+			                <div class="row">
+			                    <article class="offset4 span4 btn-realm-alt">
+			                        <div class="contact-style">
+			                        	<button type="submit" name="submit" id="submit" class="btn add-top-half">Go</button>
+			                        </div>	
+			                    </article>
+		                	</div>
+
+	                    </form>
 		            </div>
 				</section><!-- // End of .container -->		
 			</div><!-- // End of .row-fluid -->
@@ -789,7 +801,7 @@
 				
 						<article class= "span4">
 							<div class = "copyright">
-								<p>Copyright &copy; <script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script> Zach Peirce</p>
+								<p>Copyright &copy; 2015 Zach Peirce</p>
 							</div>		
 						</article><!-- // End of .span12-->
 					</div><!-- // End of .row -->
@@ -829,28 +841,26 @@
         var email = $("#email").val(); // get email field value
         var name = $("#name").val(); // get name field value
         var msg = $("#msg").val(); // get message field value
-        var captcha = $("captcha").val();
 
-
-        $.ajax({
-    		url: "http://formspree.io/zach@zachpeirce.com", 
-    		method: "POST",
-    		header: {accept:"application/json"}
-    		data: {message: "hello!"},
-    		dataType: "json"
+		$.ajax({
+		  url: 'http://formspree.io/zach@zachpeirce.com',
+		  method: 'POST',
+		  data: {message: "hello!"}
+		  dataType: 'json',
+		  beforeSend: function() { /* sending message... */ },
+		  success: function(data) { /* success message... */ },
+		  error: function(err) { /* error message... */ }
 		});
-/*
+		
         .done(function(response) {
             alert('Your message has been sent. Thank you!'); // show success message
             $("#name").val(''); // reset field after successful submission
             $("#email").val(''); // reset field after successful submission
             $("#msg").val(''); // reset field after successful submission
         })
-
         .fail(function(response) {
             alert('Error sending message.');
         });
-        */
         return false; // prevent page refresh
     });
 });
